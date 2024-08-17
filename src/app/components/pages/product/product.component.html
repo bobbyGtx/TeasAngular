@@ -1,0 +1,39 @@
+<div *ngIf="product.id" class="container">
+  <div class="row mt-4">
+    <div class="col col-12 col-md-7">
+      <div class="row justify-content-between">
+        <div class="col h2 col-12 col-sm-8">
+          {{ product.title }}
+        </div>
+        <div class="col col-12 col-sm-4 col-md-2 d-flex align-items-sm-center align-items-end justify-content-end mt-2 mt-sm-0">
+          <div class="fw-bold badge bg-secondary"><span class="h5 m-0"> Цена: {{ product.price }} руб.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col">
+      <div class="product-descriotion pt-2 pt-sm-3">
+        {{ product.description }}
+      </div>
+      <div class="d-flex justify-content-around align-items-center mt-3">
+        <a class="btn btn-primary px-4 mt-auto" [routerLink]="['/order']" (click)="selectProduct()"><span
+          class="px-3">Купить</span></a>
+      </div>
+    </div>
+    <div class="col col-11 col-md-5 col-sm-9 d-flex align-items-center justify-content-center rounded-circle overflow-hidden float-end order-first order-md-1">
+      <img class="tea-image w-100 rounded-circle " *ngIf="product.image" src="{{product.image}}" alt="Картинка чая">
+      <img class="rounded-circle" *ngIf="!product.image" src="../../../../assets/images/imagePlaceholder.png"
+           alt="Фото отсутствует">
+    </div>
+  </div>
+</div>
+<div *ngIf="!product.id" class="container">
+  <div class="h2 text-center my-5 py-5">
+    Продукт не найден!
+  </div>
+  <div class="text-center mb-5 pb-5">
+    <a class="btn btn-danger px-4 mt-auto" [routerLink]="['/catalog']"><span class="px-3">В каталог</span></a>
+  </div>
+</div>

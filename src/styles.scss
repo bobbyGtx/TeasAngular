@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.active{
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.arrow-up {
+  width: 24px;
+  height: 24px;
+  background-image: url("assets/images/arrowUp.png");
+  background-position: center;
+  margin: 0;
+}
+
+.arrow-down {
+  width: 24px;
+  height: 24px;
+  background-image: url("assets/images/arrowDown.png");
+  background-position: bottom;
+  margin: 0;
+}
+.product-descriotion{
+  text-align: justify;
+}
+.tea-image{
+  animation: rotate 25s linear infinite;
+  &:hover{
+    animation-play-state:paused;
+  }
+}
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.invalid-feedback{
+  display: block;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+.loader::before , .loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #FFF;
+  animation: prixClipFix 2s linear infinite ;
+}
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.loader::after{
+  transform: rotate3d(90, 90, 0, 180deg );
+  border-color: #0d6efd;
+}
+
+@keyframes rotate {
+  0%   {transform: rotate(0deg)}
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+  0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+  50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+  75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+}

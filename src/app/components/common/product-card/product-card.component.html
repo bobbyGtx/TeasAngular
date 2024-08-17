@@ -1,0 +1,12 @@
+<div class="card h-100">
+  <div>
+    <img class="w-100" src="{{product.image}}" alt="Фото">
+  </div>
+  <div class="card-body py-3 px-4 d-flex flex-column align-items-start">
+    <h5 class="card-title mb-3 fw-bold fs-5 w-100 text-center">{{ product.title }}</h5>
+    <p class="card-text mb-4">{{ product.description | short }}</p>
+    <div class="fw-bold mb-2">Цена: {{product.price}} руб.</div>
+    <a class="btn btn-primary px-4 mt-auto" [routerLink]="['/product',product.id]"><span class="px-3">Подробнее</span></a>
+  </div>
+</div>
+

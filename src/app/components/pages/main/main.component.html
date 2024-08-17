@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row py-sm-5 py-3">
+    <div class="p-sm-0 py-4 position-relative">
+      <div class="position-relative">
+        <img class="w-100" src="assets/images/slide-1.png" alt="Травяной чай">
+        <div class="position-absolute top-0 h-100 z-2 ms-4">
+          <div
+            class="ms-lg-5 ms-md-4 ms-2 ps-4 ps-lg-5 h-100 justify-content-sm-center justify-content-evenly d-flex flex-column gap-md-5 gap-sm-2 gap-0">
+            <div class="display-5 fw-bold text-black mb-0 pt-0 lh-1">
+              Скидки на травяные чаи
+            </div>
+            <div class="my-sm-3 my-sm-2 my-1 lh-1">
+              Узнай все подробности, заполнив заявку
+            </div>
+            <div>
+              <a class="btn btn-primary px-3 px-sm-5" [routerLink]="['/catalog']">Заказать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-lg-4">
+    <div class="col">
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col col-sm-8 col-10 mb-sm-5 mb-4 ">
+      <p class="h2 text-center fw-bold">Ответы на часто задаваемые вопросы</p>
+    </div>
+    <div class="col col col-sm-10 col-lg-8" id="accordion">
+      <div class="btn btn-primary acc-closed text fs-6 mb-3 rounded-3 border-0 d-flex align-items-center">
+        <span class="pe-3 text-start">Собираете ли вы подарочные боксы?</span>
+      </div>
+      <div class="ps-4 pt-0 border-0">
+                <span>
+                    Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+                </span>
+      </div>
+      <div class="btn btn-primary fs-6 mb-3 rounded-3 border-0 d-flex align-items-center">
+        <span class="pe-3 text-start">Сколько у вас разновидностей чая?</span>
+      </div>
+      <div class="ps-4 pt-0 border-0">
+                <span>
+                    Ассотримент всегда меняется. Чаще всего добавляются новые чаи. На данный момент ассортимент состоит из 6 наименований.
+                </span>
+      </div>
+      <div class="btn btn-primary fs-6 mb-3  rounded-3 border-0 d-flex align-items-center">
+        <span class="pe-3 text-start">В какой срок осуществляется доставка?</span>
+      </div>
+      <div class="ps-4 pt-0 border-0">
+                <span>
+                    Доставка осуществляется в максимально короткие сроки, но в зависимости от удаленности покупателя от складов. Обычно, заказы доставляются, за 2-4 дня.
+                </span>
+      </div>
+      <div class="btn btn-primary fs-6 mb-3 rounded-3 border-0 d-flex align-items-center">
+        <span class="pe-3 text-start">У вас обновляется ассортимент?</span>
+      </div>
+      <div class="ps-4 pt-0 border-0">
+        <div>
+          Конечно, наш ассортимент лучших чаев обновляется непрерывно. Мы непрерывно ищем для Вас новые
+          ароматы!
+        </div>
+      </div>
+      <div class="btn btn-primary fs-6 mb-3 rounded-3 border-0 d-flex align-items-center">
+        <span class="pe-3 text-start">Какого объема у вас пачки чая?</span>
+      </div>
+      <div class="ps-4 pt-0 border-0">
+                <span>
+                    Мы продаем упаковки по 25 пакетиков.
+                </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showTip" class="toast-container position-fixed bottom-0 end-0 p-3" >
+  <div id="liveToast" class="toast fade" [class.show]="showTip" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header bg-primary-subtle">
+      <strong class="me-auto">Совет</strong>
+      <button type="button" class="btn-close" (click)="showTip=false" aria-label="Закрыть"></button>
+    </div>
+    <div class="d-flex justify-content-between align-items-center px-2">
+      <div class="toast-body">
+      <span class="fw-bold">Посмотрите наши чайные коллекции!</span>
+      </div>
+      <a class="btn btn-primary px-1 px-sm-1" [routerLink]="['/catalog']">Смотреть</a>
+    </div>
+  </div>
+</div>
